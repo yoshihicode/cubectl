@@ -1,8 +1,8 @@
 ![cubectl demo: a rotating 3D cube in the terminal](screenshot.gif)
 # 🧊 cubectl 
-[![Release](https://img.shields.io/github/v/release/y-hatano-github/cubectl)](https://github.com/y-hatano-github/cubectl/releases/latest)
-![Go Version](https://img.shields.io/github/go-mod/go-version/y-hatano-github/cubectl)
-![License](https://img.shields.io/github/license/y-hatano-github/cubectl)
+[![Release](https://img.shields.io/github/v/release/yoshihicode/cubectl)](https://github.com/yoshihicode/cubectl/releases/latest)
+![Go Version](https://img.shields.io/github/go-mod/go-version/yoshihicode/cubectl)
+![License](https://img.shields.io/github/license/yoshihicode/cubectl)
 
 ```bash
    ________  ______  ____________________
@@ -25,27 +25,24 @@ This tool makes your typos fun.
 - 🚫 Absolutely no Kubernetes functionality included.
 
 # 💾 Download
-Pre-built binaries are available for Windows, macOS, and Linux.
-
-👉 Get the latest release here:
-https://github.com/y-hatano-github/cubectl/releases/latest
+👉 [Get the latest binaries](https://github.com/yoshihicode/cubectl/releases/latest)
 
 # 🚀 Quick start
 ## 🐧 Linux
 ```bash
-wget https://github.com/y-hatano-github/cubectl/releases/latest/download/cubectl_linux_amd64.tar.gz
+wget https://github.com/yoshihicode/cubectl/releases/latest/download/cubectl_linux_amd64.tar.gz
 tar -xzvf cubectl_linux_amd64.tar.gz
 sudo mv cubectl /usr/local/bin/
 cubectl
 ```
 ## 🍎🍺  macOS / Homebrew
 ```bash
-brew tap y-hatano-github/tap
+brew tap yoshihicode/tap
 brew install cubectl
 ```
 ## 🪟 Windows
 ```powershell
-Invoke-WebRequest -OutFile cubectl_windows_amd64.tar.gz https://github.com/y-hatano-github/cubectl/releases/latest/download/cubectl_windows_amd64.tar.gz
+Invoke-WebRequest -OutFile cubectl_windows_amd64.tar.gz https://github.com/yoshihicode/cubectl/releases/latest/download/cubectl_windows_amd64.tar.gz
 tar -xzvf cubectl_windows_amd64.tar.gz
 .\cubectl.exe
 ```
@@ -55,7 +52,7 @@ tar -xzvf cubectl_windows_amd64.tar.gz
 cubectl controls cube instead of Kubernetes clusters.
 
 Find more information at:
-  https://github.com/y-hatano-github/cubectl
+  https://github.com/yoshihicode/cubectl
 
 Controls:
   Arrow keys or wasd: Rotate the cube

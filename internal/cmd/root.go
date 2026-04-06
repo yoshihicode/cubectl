@@ -19,7 +19,7 @@ var rootCmd = &cobra.Command{
 	Long: `cubectl controls cube instead of Kubernetes clusters.
 
 Find more information at:
-  https://github.com/y-hatano-github/cubectl
+  https://github.com/yoshihicode/cubectl
   
 Controls:
   Arrow keys or wasd: Rotate the cube

@@ -30,10 +30,10 @@ release:
 brews:
   - name: cubectl
     repository:
-      owner: y-hatano-github
+      owner: yoshihicode
       name: homebrew-tap
     directory: Formula
-    homepage: "https://github.com/y-hatano-github/cubectl"
+    homepage: "https://github.com/yoshihicode/cubectl"
     description: "cubectl controls cube instead of Kubernetes clusters."
     license: "MIT"
     test: |
