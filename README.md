@@ -25,25 +25,33 @@ This tool makes your typos fun.
 - 🚫 Absolutely no Kubernetes functionality included.
 
 # 💾 Download
+Download prebuilt binaries from the latest release:  
 👉 [Get the latest binaries](https://github.com/yoshihicode/cubectl/releases/latest)
 
-# 🚀 Quick start
+# 📦 Installation
 ## 🐧 Linux
 ```bash
 wget https://github.com/yoshihicode/cubectl/releases/latest/download/cubectl_linux_amd64.tar.gz
 tar -xzvf cubectl_linux_amd64.tar.gz
 sudo mv cubectl /usr/local/bin/
+
+# Run
 cubectl
 ```
 ## 🍎🍺  macOS / Homebrew
 ```bash
 brew tap yoshihicode/tap
 brew install cubectl
+
+# Run
+cubectl
 ```
 ## 🪟 Windows
 ```powershell
 Invoke-WebRequest -OutFile cubectl_windows_amd64.tar.gz https://github.com/yoshihicode/cubectl/releases/latest/download/cubectl_windows_amd64.tar.gz
 tar -xzvf cubectl_windows_amd64.tar.gz
+
+# Run
 .\cubectl.exe
 ```
 
