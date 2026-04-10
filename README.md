@@ -14,9 +14,13 @@
     /_/|  Concept: "Control the Cube instead of Kubernetes cluster"
     |_|/
 ```
+**"kubectl [kjuːb kəntróul] ... wait, CUBE control!?"**  
+(Note: As a non-native English speaker, I took this pronunciation a bit too literally like `/kʊbɛ kəntróul/`. Hence, this tool was born.)
 
-Once you mistype `kubectl` as `cubectl`, you’ll end up controlling a cube instead of Kubernetes clusters.  
-This tool makes your typos fun.  
+| Command | Pronunciation | Purpose |
+| --- | --- | --- |
+| `kubectl` | /kjuːb kəntróul/ | Controls Kubernetes clusters. |
+| `cubectl` | /kjuːb kəntróul/ | Controls a cube instead of Kubernetes clusters. |
 
 # ⚙️ Features
 - 🧊 Renders a 3D cube instead of controlling Kubernetes clusters.
@@ -88,6 +92,19 @@ Usage:
   cubectl [command]
 
 Use "cubectl <command> --help" for more information about a command.
+```
+
+# 🔌 Use as a kubectl plugin
+You can integrate cubectl directly into your kubectl workflow with this simple wrapper:
+
+```
+echo -e '#!/bin/bash\ncubectl "$@"' > kubectl-cube
+chmod +x kubectl-cube
+sudo mv kubectl-cube /usr/local/bin/
+
+# Now you're literally controlling a cube via kubectl!
+kubectl cube 
+kubectl cube logs -f
 ```
 
 # 📚 References
