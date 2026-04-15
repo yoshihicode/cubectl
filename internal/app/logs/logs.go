@@ -16,6 +16,7 @@ import (
 type Options struct {
 	Name   *string
 	Follow bool
+	Tail   int32
 }
 
 func Log(ctx context.Context, ots Options) error {
@@ -76,8 +77,12 @@ Loop:
 				fmt.Println(logs[lcnt])
 				lcnt++
 			} else {
-				if ots.Follow {
-					clog.Info(logger.Message{File: "cube.go", Line: 100, Text: fmt.Sprintf("rotating cube... step %d", step)})
+				if ots.Follow || ots.Tail > 0 {
+					clog.Info(logger.Message{
+						File: "cube.go",
+						Line: 88,
+						Text: fmt.Sprintf("Telemetry: yaw=%.2f pitch=%.2f scale=%.1f", yaw, pitch, scale),
+					})
 					if step >= 20 {
 						step = 1
 					} else {
@@ -86,12 +91,20 @@ Loop:
 					yaw = math.Mod(yaw+0.08, twoPi)
 					pitch = math.Mod(pitch+0.04, twoPi)
 					drawCube(&m, yaw, pitch, scale)
+					time.Sleep(300 * time.Millisecond)
 				} else {
 					drawCube(&m, yaw, pitch, scale)
 					break Loop
 				}
 			}
-			time.Sleep(300 * time.Millisecond)
+
+			if ots.Tail > 0 {
+				ots.Tail--
+				if ots.Tail == 0 {
+					break Loop
+				}
+			}
+
 		}
 	}
 
@@ -102,9 +115,6 @@ func drawCube(m *g.Model, yaw, pitch, scale float64) {
 	d := [40][40]int{}
 	faceData := m.GetShape(yaw, pitch, scale, 20, 10)
 	for _, fd := range faceData {
-		// for _, p := range fd.Fill {
-		// 	d[p.X][p.Y] = 0
-		// }
 		for _, p := range fd.Outline {
 			d[p.X][p.Y] = 1
 		}
