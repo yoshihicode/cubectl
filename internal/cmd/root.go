@@ -14,6 +14,10 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var (
+	output string
+)
+
 var rootCmd = &cobra.Command{
 	Use:   "cubectl",
 	Short: "cubectl controls cube instead of Kubernetes clusters.",
@@ -55,6 +59,9 @@ func init() {
 			Title: "Troubleshooting and Debugging Commands:",
 		},
 	)
+
+	rootCmd.Flags().StringVarP(&output, "output", "o", "wireframe", "Output format: wireframe|solid")
+	rootCmd.Flags().BoolP("watch", "w", false, "Watch for changes to the cube (it will keep spinning)")
 
 	rootCmd.AddCommand(describe.NewDescribeCmd())
 	rootCmd.AddCommand(get.NewGetCmd())
