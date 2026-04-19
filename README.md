@@ -62,7 +62,7 @@ tar -xzvf cubectl_windows_amd64.tar.gz
 
 # 📘 Usage
 ```bash
-cubectl controls cube instead of Kubernetes clusters.
+cubectl controls cube and pea pod instead of Kubernetes clusters.
 
 Find more information at:
   https://github.com/yoshihicode/cubectl
