@@ -20,10 +20,11 @@
 | Command | Pronunciation | Purpose |
 | --- | --- | --- |
 | `kubectl` | /kjuːb kəntróul/ | Controls Kubernetes clusters. |
-| `cubectl` | /kjuːb kəntróul/ | Controls a cube instead of Kubernetes clusters. |
+| `cubectl` | /kjuːb kəntróul/ | Controls a cube(and a pea pod) instead of Kubernetes clusters. |
 
 # ⚙️ Features
 - 🧊 Renders a 3D cube instead of controlling Kubernetes clusters.
+- 🫛 Renders a 3D pea pod instead of controlling Kubernetes clusters.
 - 🔄 Rotate the cube with arrow keys or `wasd`.
 - 🔍 Zoom in/out with `z` and `x`.
 - 🚫 Absolutely no Kubernetes functionality included.
