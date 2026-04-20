@@ -1,6 +1,6 @@
 package template
 
-var RootHelpTemplate = `cubectl controls cube and pea pod instead of Kubernetes clusters.
+var RootHelpTemplate = `cubectl controls a cube (and a pea pod) instead of Kubernetes clusters.
 
 Find more information at:
   https://github.com/yoshihicode/cubectl
@@ -30,7 +30,7 @@ Usage:
 Use "cubectl <command> --help" for more information about a command.
 `
 
-var RootUsageTemplate = `cubectl controls cube and pea pod instead of Kubernetes clusters.
+var RootUsageTemplate = `cubectl controls a cube (and a pea pod) instead of Kubernetes clusters.
 
 Find more information at:
   https://github.com/yoshihicode/cubectl
