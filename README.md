@@ -22,19 +22,19 @@
 | `kubectl` | /kjuːb kəntróul/ | Controls Kubernetes clusters. |
 | `cubectl` | /kjuːb kəntróul/ | Controls a cube (and a pea pod) instead of Kubernetes clusters. |
 
-# ⚙️ Features
+## ⚙️ Features
 - 🧊 Renders a 3D cube instead of controlling Kubernetes clusters.
 - 🫛 Renders a rotating pea pod too.
 - 🔄 Rotate the cube with arrow keys or `wasd`.
 - 🔍 Zoom in/out with `z` and `x`.
 - 🚫 Absolutely no Kubernetes functionality included.
 
-# 💾 Download
+## 💾 Download
 Download prebuilt binaries from the latest release:  
 👉 [Get the latest binaries](https://github.com/yoshihicode/cubectl/releases/latest)
 
-# 📦 Installation
-## 🐧 Linux
+## 📦 Installation
+### 🐧 Linux
 ```bash
 wget https://github.com/yoshihicode/cubectl/releases/latest/download/cubectl_linux_amd64.tar.gz
 tar -xzvf cubectl_linux_amd64.tar.gz
@@ -43,7 +43,7 @@ sudo mv cubectl /usr/local/bin/
 # Run
 cubectl
 ```
-## 🍎🍺  macOS / Homebrew
+### 🍎🍺  macOS / Homebrew
 ```bash
 brew tap yoshihicode/tap
 brew install cubectl
@@ -51,7 +51,7 @@ brew install cubectl
 # Run
 cubectl
 ```
-## 🪟 Windows
+### 🪟 Windows
 ```powershell
 Invoke-WebRequest -OutFile cubectl_windows_amd64.tar.gz https://github.com/yoshihicode/cubectl/releases/latest/download/cubectl_windows_amd64.tar.gz
 tar -xzvf cubectl_windows_amd64.tar.gz
@@ -60,7 +60,7 @@ tar -xzvf cubectl_windows_amd64.tar.gz
 .\cubectl.exe
 ```
 
-# 📘 Usage
+## 📘 Usage
 ```bash
 cubectl controls a cube (and a pea pod) instead of Kubernetes clusters.
 
@@ -92,7 +92,7 @@ Usage:
 Use "cubectl <command> --help" for more information about a command.
 ```
 
-# 🔌 Use as a kubectl plugin
+## 🔌 Use as a kubectl plugin
 You can integrate cubectl directly into your kubectl workflow with this simple wrapper:
 
 ```
@@ -105,7 +105,7 @@ kubectl cube
 kubectl cube logs -f
 ```
 
-# 🛠️ Build from source
+## 🛠️ Build from source
 ```
 git clone https://github.com/yoshihicode/cubectl.git
 cd cubectl
@@ -113,14 +113,14 @@ go build -o cubectl
 ./cubectl
 ```
 
-# 📚 References
-## Inspiration for the idea
+## 📚 References
+### Inspiration for the idea
 I was reading the following discussion, which somehow inspired this joke CLI command.
 - [Poll: how to pronounce kubectl (Reddit)](https://www.reddit.com/r/kubernetes/comments/7tzyla/poll_how_to_pronounce_kubectl/)
 
-## Line drawing
+### Line drawing
 - [Bresenham's line algorithm (Wikipedia)](https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm)
 
-## 3D Rendering
+### 3D Rendering
 - [Creating a Java applet to display 3D models (CodeZine)](https://codezine.jp/article/detail/38?p=3)
 - [Rotating a cube using JavaScript's canvas (Qiita)](https://qiita.com/mochimkchiking/items/24fbbe93e0f7aa89edba)
