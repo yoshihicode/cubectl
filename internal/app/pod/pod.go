@@ -10,6 +10,8 @@ import (
 
 	"cubectl/internal/logger"
 	"cubectl/internal/terminal"
+
+	"github.com/nsf/termbox-go"
 )
 
 type Options struct {
@@ -19,7 +21,6 @@ type Options struct {
 
 func Render(ctx context.Context, opts Options) error {
 	output := opts.Output
-	w := opts.Watch
 
 	if output == "" {
 		output = "wireframe" // default
@@ -130,11 +131,32 @@ func Render(ctx context.Context, opts Options) error {
 	drawString := func(x, y int, str string) {
 		for i, r := range str {
 			s.SetCell(x+i, y, r, terminal.ColorDefault, terminal.ColorBlack)
+
+		}
+	}
+
+	// Find the maximum distance from the origin to any vertex
+	maxR := 0.0
+	for _, vertex := range v {
+		dist := math.Sqrt(float64(vertex[0]*vertex[0] + vertex[1]*vertex[1] + vertex[2]*vertex[2]))
+		if dist > maxR {
+			maxR = dist
 		}
 	}
 
 loop:
 	for {
+
+		w, h := termbox.Size()
+		cx := w / 2
+		cy := h / 2
+
+		limitR := float64(h) / 2.2 * 0.25
+		if float64(w)/4.0 < limitR {
+			limitR = float64(w) / 4.0
+		}
+		MaxScale := limitR / maxR
+
 		select {
 		case ev := <-ch:
 			switch ev.Type {
@@ -156,7 +178,7 @@ loop:
 				}
 				if string(ev.Rune) == "z" {
 					scale += 0.1
-					scale = math.Min(1.3, scale)
+					scale = math.Min(MaxScale, scale)
 				}
 				if string(ev.Rune) == "x" {
 					scale -= 0.1
@@ -178,12 +200,12 @@ loop:
 				logIndex++
 			}
 
-			if w {
+			if opts.Watch {
 				yaw = math.Mod(yaw+0.02, twoPi)
 				pitch = math.Mod(pitch+0.01, twoPi)
 			}
 
-			faceData := m.GetShape(yaw, pitch, scale, 40, 20)
+			faceData := m.GetShape(yaw, pitch, scale, cx, cy)
 			for _, fd := range faceData {
 				if output == "solid" {
 					for _, p := range fd.Fill {
