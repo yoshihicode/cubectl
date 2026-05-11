@@ -10,8 +10,6 @@ import (
 
 	"cubectl/internal/logger"
 	"cubectl/internal/terminal"
-
-	"github.com/nsf/termbox-go"
 )
 
 type Options struct {
@@ -147,7 +145,7 @@ func Render(ctx context.Context, opts Options) error {
 loop:
 	for {
 
-		w, h := termbox.Size()
+		w, h := s.Size()
 		cx := w / 2
 		cy := h / 2
 
