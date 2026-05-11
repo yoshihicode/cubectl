@@ -95,7 +95,7 @@ func RenderD(ctx context.Context, opts Options) error {
 	}
 	defer func() {
 		s.Close()
-		fmt.Printf("cube.geometry.io \"cube\" deleted\n")
+		fmt.Printf("pod.geometry.io \"pod\" deleted\n")
 	}()
 
 	s.SetOutputMode()
@@ -109,13 +109,16 @@ func RenderD(ctx context.Context, opts Options) error {
 	pitch := 0.0
 	scale := 0.3
 
+	cx := w / 2
+	cy := h / 2
+
 	drawString := func(x, y int, str string) {
 		for i, r := range str {
 			s.SetCell(x+i, y, r, terminal.ColorDefault, terminal.ColorBlack)
 		}
 	}
 
-	faceData := m.GetShape(yaw, pitch, scale, 40, 20)
+	faceData := m.GetShape(yaw, pitch, scale, cx, cy)
 	iscollapse := false
 
 	dxs := make([][]float64, len(faceData))
@@ -164,7 +167,7 @@ loop:
 
 			if iscollapse {
 				elapsed := time.Since(startTime).Seconds()
-				centerX, centerY := 40.0, 20.0
+				centerX, centerY := float64(cx), float64(cy)
 
 				for i, fd := range faceData {
 					for j := range fd.Outline {
