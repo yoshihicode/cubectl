@@ -228,12 +228,3 @@ func keyEvent(ch chan terminal.Event, s terminal.Screen) {
 		ch <- s.PollEvent()
 	}
 }
-
-func CubeTimestamp() string {
-	now := time.Now()
-	return fmt.Sprintf(
-		"%s %s",
-		now.Format("0102"),            // MMDD
-		now.Format("15:04:05.000000"), // HH:MM:SS.microsec
-	)
-}
